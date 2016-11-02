@@ -1,0 +1,22 @@
+{
+  "name": "opencv.js",
+  "version": "1.0.0+280cdb5b9441446e5dc5d3d6f3522344e8609522",
+  "description": "OpenCV compiled to JS with Emscripten",
+  "homepage": "https://github.com/dbkaplun/opencv.js",
+  "bugs": "https://github.com/dbkaplun/opencv.js/issues",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "./build.js",
+    "build-and-tag": "if [[ -z $(git status --porcelain) ]]; then version=\"$(npm run build | tail -n1)\" && git add . && git commit -m \"Version $version\" && git tag \"v$version\"; else echo 'Please make sure your git repository is clean before running build-and-tag.' && exit 1; fi",
+    "shipit": "npm run build-and-tag && git push origin master --tags && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbkaplun/opencv.js.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "Dan Kaplun <dbkaplun@gmail.com>",
+  "license": "MIT"
+}
